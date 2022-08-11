@@ -23,7 +23,7 @@
             android:layout_marginBottom="27dp"
             android:text="Ticket Price:-\nNon-IEEE member: INR 399 \nIEEE member: INR 249 "
             android:textColor="@color/black"
-            app:fontFamily="@font/roboto_regular"
+            app:fontFamily="@font/roboto_bold"
             app:layout_constraintBottom_toTopOf="@+id/nameLay"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.049"
@@ -75,6 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="19dp"
                 android:text="Are you an IEE member?"
+                android:textColor="@color/black"
                 app:fontFamily="@font/open_sans_semibold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -143,7 +144,7 @@
                     android:hint="Current Year"
                     android:inputType="text"
                     android:lines="1"
-                    android:textColor="@color/layoutfiller"
+                    android:textColor="@color/black"
                     app:fontFamily="@font/open_sans"
                     tools:ignore="DuplicateIds" />
 
@@ -191,7 +192,7 @@
                     android:hint="Phone No."
                     android:inputType="phone"
                     android:lines="1"
-                    android:textColor="@color/layoutfiller"
+                    android:textColor="@color/black"
                     app:fontFamily="@font/open_sans"
                     tools:ignore="DuplicateIds" />
 
@@ -236,7 +237,7 @@
                     android:hint="Email Address"
                     android:inputType="textEmailAddress"
                     android:lines="1"
-                    android:textColor="@color/layoutfiller"
+                    android:textColor="@color/black"
                     app:fontFamily="@font/open_sans"
                     tools:ignore="DuplicateIds" />
 
@@ -267,8 +268,6 @@
                 android:textColor="@color/layoutfiller"
                 app:errorEnabled="true"
                 app:fontFamily="@font/open_sans"
-                app:helperText="@string/required"
-                app:helperTextTextColor="@color/holo_red_dark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -281,7 +280,7 @@
                     android:hint="Department"
                     android:inputType="text"
                     android:lines="1"
-                    android:textColor="@color/layoutfiller"
+                    android:textColor="@color/black"
                     app:fontFamily="@font/open_sans"
                     tools:ignore="DuplicateIds" />
 
@@ -326,7 +325,7 @@
                     android:hint="Name"
                     android:inputType="textPersonName"
                     android:lines="1"
-                    android:textColor="@color/layoutfiller"
+                    android:textColor="@color/black"
                     app:fontFamily="@font/open_sans"
                     tools:ignore="DuplicateIds" />
 
@@ -351,6 +350,7 @@
                 android:layout_height="19dp"
                 android:text="Select your food preference:"
                 app:fontFamily="@font/open_sans_semibold"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -439,6 +439,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="19dp"
                 android:text="Select your T-shirt size:"
+                android:textColor="@color/black"
                 app:fontFamily="@font/open_sans_semibold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

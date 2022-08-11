@@ -35,9 +35,56 @@ class ScrollingActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.toolbar))
 
+        nameFocusListener()
+        emailFocusListener()
+        numberFocusListener()
+        yearFocusListener()
+        //deptFocusListener()
+
+
         registerButton = findViewById(R.id.registerButton)
         registerButton.setOnClickListener {
             postEntry()
+        }
+    }
+
+    /*private fun deptFocusListener() {
+        binding.root.dept.setOnFocusChangeListener { _, focused ->
+            if(!focused){
+                binding.root.deptContainer.helperText = validateText(dept)
+            }
+        }
+    }*/
+
+    private fun yearFocusListener() {
+        binding.root.currentYear.setOnFocusChangeListener { _, focused ->
+            if(!focused){
+                binding.root.currentYearContainer.helperText = validateText(currentYear)
+            }
+        }
+    }
+
+    private fun numberFocusListener() {
+        binding.root.yourNumber.setOnFocusChangeListener { _, focused ->
+            if(!focused){
+                binding.root.yourNumberContainer.helperText = validatedPhone()
+            }
+        }
+    }
+
+    private fun emailFocusListener() {
+        binding.root.yourEmail.setOnFocusChangeListener { _, focused ->
+            if(!focused){
+                binding.root.yourEmailContainer.helperText = validateEmail()
+            }
+        }
+    }
+
+    private fun nameFocusListener() {
+        binding.root.name.setOnFocusChangeListener { _, focused ->
+            if(!focused){
+                binding.root.yourNameContainer.helperText = validateText(name)
+            }
         }
     }
 
@@ -71,40 +118,14 @@ class ScrollingActivity : AppCompatActivity() {
     }
     private fun postEntry() {
         yourNameEditText = findViewById(R.id.name)
-        yourNameEditText.setOnFocusChangeListener { _, focused ->
-            if(!focused){
-                binding.root.yourNameContainer.helperText = validateText(yourNameEditText)
-            }
-        }
-
 
         emailEditText = findViewById(R.id.yourEmail)
-        emailEditText.setOnFocusChangeListener { _, focused ->
-            if(!focused){
-                binding.root.yourEmailContainer.helperText = validateEmail()
-            }
-        }
 
         numberEditText = findViewById(R.id.yourNumber)
-        numberEditText.setOnFocusChangeListener { _, focused ->
-            if(!focused){
-                binding.root.yourNumberContainer.helperText = validatedPhone()
-            }
-        }
 
         yearEditText = findViewById(R.id.currentYear)
-            yearEditText.setOnFocusChangeListener { _, focused ->
-                if(!focused){
-                    binding.root.currentYearContainer.helperText = validateText(yearEditText)
-                }
-            }
 
         deptEditText = findViewById(R.id.dept)
-            deptEditText.setOnFocusChangeListener { _, focused ->
-                if(!focused){
-                    binding.root.deptContainer.helperText = validateText(deptEditText)
-                }
-            }
 
         val checkedMembershipRadioButton = rMembership.checkedRadioButtonId
         val member = findViewById<RadioButton>(checkedMembershipRadioButton)
@@ -128,21 +149,21 @@ class ScrollingActivity : AppCompatActivity() {
         val validEmail = binding.root.yourEmailContainer.helperText == null
         val validNumber = binding.root.yourNumberContainer.helperText == null
         val validYear = binding.root.currentYearContainer.helperText == null
-        val validDept = binding.root.deptContainer.helperText == null
+        //val validDept = binding.root.deptContainer.helperText == null
 
 
-        if(validName && validEmail && validNumber && validYear && validDept){
+        if(validName && validEmail && validNumber && validYear){
             realtimeDatabaseManager.addEntry(yourName, yourEmail, yourNum, yourYear, yourDept, memberText, foodText, sizeText, { showToast(getString(R.string.success)) },
                 { showToast(getString(R.string.failed)) })
+            resetState()
         }
         else
             invalidDetails()
-        resetState()
     }
 
     private fun validateText(thisEditText: EditText): String? {
         val textText = thisEditText.text.toString()
-        if(textText.isBlank()){
+        if(textText.isEmpty()){
             return "Enter valid ${thisEditText.hint}"
         }
         return null
@@ -165,7 +186,7 @@ class ScrollingActivity : AppCompatActivity() {
 
     private fun validateEmail(): String? {
         val emailText = binding.root.yourEmail.text.toString()
-        if(Patterns.EMAIL_ADDRESS.matcher(emailText).matches()){
+        if(!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()){
             return "Invalid Email Address"
         }
         return null
