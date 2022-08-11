@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lavender">#245FFD</color>
     <color name="layoutfiller">#747980</color>
+    <color name="holo_red_dark">#F44336</color>
 </resources>

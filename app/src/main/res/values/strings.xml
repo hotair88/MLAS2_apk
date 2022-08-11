@@ -4,4 +4,6 @@
     <string name="about_message">The Machine Learning (ML) Accelerator is IEEE JU SB\'s flagship event to sow the seeds of interest and information about ML in young minds and tech aficionados.</string>
     <string name="success">Registration Successful!</string>
     <string name="failed">Registration failed! Please check your internet connection</string>
+    <string name="incompleteCredentials">Registration incomplete! FILL ALL THE DETAILS.</string>
+    <string name="required">Required</string>
 </resources>

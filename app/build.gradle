@@ -39,6 +39,12 @@ android {
     }
 }
 
+/*all projects {
+    repositories {
+        google()
+    }
+}*/
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -51,4 +57,5 @@ dependencies {
     //classpath 'com.google.gms:google-services:4.3.13'
     implementation platform('com.google.firebase:firebase-bom:30.3.2')
     implementation 'com.google.firebase:firebase-database:16.1.0'
+    //implementation 'com.android.support:appcompat-v7:25.1.0'
 }

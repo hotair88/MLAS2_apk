@@ -1,7 +1,7 @@
 package com.example.mlas2
 
 import android.os.Bundle
-import android.provider.MediaStore
+import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.mlas2.databinding.ActivityScrollingBinding
 import kotlinx.android.synthetic.main.content_scrolling.*
+import kotlinx.android.synthetic.main.content_scrolling.view.*
 
 class ScrollingActivity : AppCompatActivity() {
 
@@ -70,10 +71,40 @@ class ScrollingActivity : AppCompatActivity() {
     }
     private fun postEntry() {
         yourNameEditText = findViewById(R.id.name)
+        yourNameEditText.setOnFocusChangeListener { _, focused ->
+            if(!focused){
+                binding.root.yourNameContainer.helperText = validateText(yourNameEditText)
+            }
+        }
+
+
         emailEditText = findViewById(R.id.yourEmail)
+        emailEditText.setOnFocusChangeListener { _, focused ->
+            if(!focused){
+                binding.root.yourEmailContainer.helperText = validateEmail()
+            }
+        }
+
         numberEditText = findViewById(R.id.yourNumber)
+        numberEditText.setOnFocusChangeListener { _, focused ->
+            if(!focused){
+                binding.root.yourNumberContainer.helperText = validatedPhone()
+            }
+        }
+
         yearEditText = findViewById(R.id.currentYear)
+            yearEditText.setOnFocusChangeListener { _, focused ->
+                if(!focused){
+                    binding.root.currentYearContainer.helperText = validateText(yearEditText)
+                }
+            }
+
         deptEditText = findViewById(R.id.dept)
+            deptEditText.setOnFocusChangeListener { _, focused ->
+                if(!focused){
+                    binding.root.deptContainer.helperText = validateText(deptEditText)
+                }
+            }
 
         val checkedMembershipRadioButton = rMembership.checkedRadioButtonId
         val member = findViewById<RadioButton>(checkedMembershipRadioButton)
@@ -92,9 +123,52 @@ class ScrollingActivity : AppCompatActivity() {
         val memberText = member.text.toString()
         val foodText = food.text.toString()
         val sizeText = size.text.toString()
-        realtimeDatabaseManager.addEntry(yourName, yourEmail, yourNum, yourYear, yourDept, memberText, foodText, sizeText, { showToast(getString(R.string.success)) },
-            { showToast(getString(R.string.failed)) })
+
+        val validName = binding.root.yourNameContainer.helperText == null
+        val validEmail = binding.root.yourEmailContainer.helperText == null
+        val validNumber = binding.root.yourNumberContainer.helperText == null
+        val validYear = binding.root.currentYearContainer.helperText == null
+        val validDept = binding.root.deptContainer.helperText == null
+
+
+        if(validName && validEmail && validNumber && validYear && validDept){
+            realtimeDatabaseManager.addEntry(yourName, yourEmail, yourNum, yourYear, yourDept, memberText, foodText, sizeText, { showToast(getString(R.string.success)) },
+                { showToast(getString(R.string.failed)) })
+        }
+        else
+            invalidDetails()
         resetState()
+    }
+
+    private fun validateText(thisEditText: EditText): String? {
+        val textText = thisEditText.text.toString()
+        if(textText.isBlank()){
+            return "Enter valid ${thisEditText.hint}"
+        }
+        return null
+    }
+
+    private fun invalidDetails() {
+        showToast(getString(R.string.incompleteCredentials))
+    }
+
+    private fun validatedPhone(): String? {
+        val phoneText = binding.root.yourNumber.text.toString()
+        if(!phoneText.matches(".*[0-9]*".toRegex())){
+            return "Must be all digits!"
+        }
+        if(phoneText.length != 10){
+            return "Enter a valid phone number"
+        }
+        return null
+    }
+
+    private fun validateEmail(): String? {
+        val emailText = binding.root.yourEmail.text.toString()
+        if(Patterns.EMAIL_ADDRESS.matcher(emailText).matches()){
+            return "Invalid Email Address"
+        }
+        return null
     }
 
     private fun showToast(string: String) {

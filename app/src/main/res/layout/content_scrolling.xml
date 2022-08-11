@@ -75,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="19dp"
                 android:text="Are you an IEE member?"
-                app:fontFamily="@font/montserrat_alternates_medium"
+                app:fontFamily="@font/open_sans_semibold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -109,7 +109,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/frameLayout5"
             android:layout_width="342dp"
-            android:layout_height="67dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="18dp"
             android:layout_marginEnd="24dp"
@@ -121,36 +121,41 @@
             app:layout_constraintTop_toBottomOf="@+id/frameLayout4"
             app:layout_constraintVertical_bias="0.0">
 
-            <TextView
-                android:id="@+id/textView32"
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:text="Current Year"
-                app:fontFamily="@font/montserrat_alternates_medium"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/currentYear"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/currentYearContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="342dp"
-                android:layout_height="48dp"
-                android:hint="Your Year"
-                android:inputType="text"
+                android:layout_height="wrap_content"
                 android:textColor="@color/layoutfiller"
+                app:errorEnabled="true"
                 app:fontFamily="@font/open_sans"
+                app:helperText="@string/required"
+                app:helperTextTextColor="@color/holo_red_dark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView32"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/currentYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Current Year"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:textColor="@color/layoutfiller"
+                    app:fontFamily="@font/open_sans"
+                    tools:ignore="DuplicateIds" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/frameLayout4"
             android:layout_width="342dp"
-            android:layout_height="67dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="18dp"
             android:layout_marginEnd="24dp"
@@ -162,36 +167,42 @@
             app:layout_constraintTop_toBottomOf="@+id/frameLayout3"
             app:layout_constraintVertical_bias="0.0">
 
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:text="Phone No."
-                app:fontFamily="@font/montserrat_alternates_medium"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/yourNumber"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/yourNumberContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="342dp"
-                android:layout_height="48dp"
-                android:hint="Your Contact Number"
-                android:inputType="phone"
+                android:layout_height="wrap_content"
                 android:textColor="@color/layoutfiller"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:errorEnabled="true"
                 app:fontFamily="@font/open_sans"
+                app:helperText="@string/required"
+                app:helperTextTextColor="@color/holo_red_dark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView22"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/yourNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Phone No."
+                    android:inputType="phone"
+                    android:lines="1"
+                    android:textColor="@color/layoutfiller"
+                    app:fontFamily="@font/open_sans"
+                    tools:ignore="DuplicateIds" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/frameLayout3"
             android:layout_width="342dp"
-            android:layout_height="67dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="18dp"
             android:layout_marginEnd="24dp"
@@ -203,37 +214,40 @@
             app:layout_constraintTop_toBottomOf="@+id/nameLay"
             app:layout_constraintVertical_bias="0.0">
 
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:text="Email"
-                app:fontFamily="@font/montserrat_alternates_medium"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/yourEmail"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/yourEmailContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="342dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="19dp"
-                android:hint="Your Email"
-                android:inputType="textEmailAddress"
+                android:layout_height="wrap_content"
                 android:textColor="@color/layoutfiller"
+                app:errorEnabled="true"
                 app:fontFamily="@font/open_sans"
+                app:helperText="@string/required"
+                app:helperTextTextColor="@color/holo_red_dark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView12"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/yourEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Email Address"
+                    android:inputType="textEmailAddress"
+                    android:lines="1"
+                    android:textColor="@color/layoutfiller"
+                    app:fontFamily="@font/open_sans"
+                    tools:ignore="DuplicateIds" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/frameLayout6"
             android:layout_width="342dp"
-            android:layout_height="67dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="18dp"
             android:layout_marginEnd="24dp"
@@ -245,36 +259,40 @@
             app:layout_constraintTop_toBottomOf="@+id/frameLayout5"
             app:layout_constraintVertical_bias="0.0">
 
-            <TextView
-                android:id="@+id/textView42"
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:text="Department"
-                app:fontFamily="@font/montserrat_alternates_medium"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/dept"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/deptContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="342dp"
-                android:layout_height="48dp"
-                android:hint="Your Department"
-                android:inputType="text"
+                android:layout_height="wrap_content"
                 android:textColor="@color/layoutfiller"
+                app:errorEnabled="true"
                 app:fontFamily="@font/open_sans"
+                app:helperText="@string/required"
+                app:helperTextTextColor="@color/holo_red_dark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView42"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dept"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Department"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:textColor="@color/layoutfiller"
+                    app:fontFamily="@font/open_sans"
+                    tools:ignore="DuplicateIds" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/nameLay"
             android:layout_width="342dp"
-            android:layout_height="67dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="90dp"
             android:layout_marginEnd="24dp"
@@ -286,31 +304,33 @@
             app:layout_constraintTop_toBottomOf="@+id/regsTextView"
             app:layout_constraintVertical_bias="0.0">
 
-            <TextView
-                android:id="@+id/nameQuestion"
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:text="Name"
-                app:fontFamily="@font/montserrat_alternates_medium"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/name"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/yourNameContainer"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="342dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="5dp"
-                android:hint="Your Name"
-                android:inputType="textPersonName"
+                android:layout_height="wrap_content"
                 android:textColor="@color/layoutfiller"
+                app:errorEnabled="true"
                 app:fontFamily="@font/open_sans"
+                app:helperText="@string/required"
+                app:helperTextTextColor="@color/holo_red_dark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameQuestion"
-                app:layout_constraintVertical_bias="1.0"
-                tools:ignore="TouchTargetSizeCheck" />
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+                    android:lines="1"
+                    android:textColor="@color/layoutfiller"
+                    app:fontFamily="@font/open_sans"
+                    tools:ignore="DuplicateIds" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -330,7 +350,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="19dp"
                 android:text="Select your food preference:"
-                app:fontFamily="@font/montserrat_alternates_semibold"
+                app:fontFamily="@font/open_sans_semibold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -378,7 +398,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4">
 
@@ -388,6 +408,7 @@
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="M"
+                    android:textColor="#00838F"
                     app:fontFamily="@font/open_sans" />
 
                 <RadioButton
@@ -418,7 +439,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="19dp"
                 android:text="Select your T-shirt size:"
-                app:fontFamily="@font/montserrat_alternates_semibold"
+                app:fontFamily="@font/open_sans_semibold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
