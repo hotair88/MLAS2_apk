@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ScrollingActivity"
+    tools:showIn="@layout/activity_scrolling">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/ticketPriceDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="27dp"
+            android:text="Ticket Price:-\nNon-IEEE member: INR 399 \nIEEE member: INR 249 "
+            android:textColor="@color/black"
+            app:fontFamily="@font/roboto_regular"
+            app:layout_constraintBottom_toTopOf="@+id/nameLay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.049"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/regsTextView" />
+
+        <TextView
+            android:id="@+id/regsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="50dp"
+            android:letterSpacing="0.035"
+            android:text="Registration"
+            android:textAppearance="@style/signup"
+            app:fontFamily="sans-serif-condensed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:text="Register"
+            android:viewportWidth="342"
+            android:viewportHeight="43"
+            app:fontFamily="@font/open_sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tsizeLayout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/membershipLay"
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout6">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:text="Are you an IEE member?"
+                app:fontFamily="@font/montserrat_alternates_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/rMembership"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+                <RadioButton
+                    android:id="@+id/rYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes"
+                    app:fontFamily="@font/open_sans" />
+
+                <RadioButton
+                    android:id="@+id/rNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    app:fontFamily="@font/open_sans" />
+
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout5"
+            android:layout_width="342dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="598dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.476"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout4"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:text="Current Year"
+                app:fontFamily="@font/montserrat_alternates_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/currentYear"
+                android:layout_width="342dp"
+                android:layout_height="48dp"
+                android:hint="Your Year"
+                android:inputType="text"
+                android:textColor="@color/layoutfiller"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView32"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout4"
+            android:layout_width="342dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="598dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.476"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout3"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:text="Phone No."
+                app:fontFamily="@font/montserrat_alternates_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/yourNumber"
+                android:layout_width="342dp"
+                android:layout_height="48dp"
+                android:hint="Your Contact Number"
+                android:inputType="phone"
+                android:textColor="@color/layoutfiller"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView22"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout3"
+            android:layout_width="342dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="598dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.476"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameLay"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:text="Email"
+                app:fontFamily="@font/montserrat_alternates_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/yourEmail"
+                android:layout_width="342dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="19dp"
+                android:hint="Your Email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/layoutfiller"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView12"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout6"
+            android:layout_width="342dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="598dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.476"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout5"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:text="Department"
+                app:fontFamily="@font/montserrat_alternates_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/dept"
+                android:layout_width="342dp"
+                android:layout_height="48dp"
+                android:hint="Your Department"
+                android:inputType="text"
+                android:textColor="@color/layoutfiller"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView42"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nameLay"
+            android:layout_width="342dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="598dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.476"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/regsTextView"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/nameQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:text="Name"
+                app:fontFamily="@font/montserrat_alternates_medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="342dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="5dp"
+                android:hint="Your Name"
+                android:inputType="textPersonName"
+                android:textColor="@color/layoutfiller"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameQuestion"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout10"
+            android:layout_width="342dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/membershipLay">
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:text="Select your food preference:"
+                app:fontFamily="@font/montserrat_alternates_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/rFoodChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView30">
+
+                <RadioButton
+                    android:id="@+id/rVeg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Veg"
+                    app:fontFamily="@font/open_sans" />
+
+                <RadioButton
+                    android:id="@+id/rNonVeg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Non-Veg"
+                    app:fontFamily="@font/open_sans" />
+
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tsizeLayout"
+            android:layout_width="342dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout10">
+
+            <RadioGroup
+                android:id="@+id/rgTshirtSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+                <RadioButton
+                    android:id="@+id/rM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="M"
+                    app:fontFamily="@font/open_sans" />
+
+                <RadioButton
+                    android:id="@+id/rL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L"
+                    app:fontFamily="@font/open_sans" />
+
+                <RadioButton
+                    android:id="@+id/rXL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="XL"
+                    app:fontFamily="@@font/open_sans" />
+
+                <RadioButton
+                    android:id="@+id/rXXL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="XXL"
+                    app:fontFamily="@font/open_sans" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:text="Select your T-shirt size:"
+                app:fontFamily="@font/montserrat_alternates_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/ieee_banner"
+            android:layout_width="342dp"
+            android:layout_height="134dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/registerButton"
+            app:srcCompat="@drawable/ieee_raw" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
